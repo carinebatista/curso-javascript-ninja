@@ -33,9 +33,7 @@ function showName(){
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-var varShowName= function showName(){
-  return 'Carine';
-}
+var varShowName= showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
@@ -70,9 +68,37 @@ function calculator(operador){
         return ' Resultado da Operação: '+x+' '+operador+' '+y+ ' = '+(x%y);
       }else {
         return 'Operação Inválida';
-      }
-    }
+      };
+    };
 }
+
+//utilizando o switch 
+function calculator(operator){
+  return function(x,y){
+    var result;
+    switch(operator){
+      case '+':
+        result= x+y;
+        break;
+      case '-':
+        result= x-y;
+        break;
+      case '*':
+        result= x*y;
+        break;
+      case '/':
+        result=x/y;
+        break;
+      case '%':
+        result= x%y;
+        break;
+      default :
+        return 'Operação invalida';
+    }
+    return 'Resultado da Operação: '+x+' '+operator+' '+y+' = '+result;
+  };
+}
+
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
@@ -99,7 +125,7 @@ Faça uma operação com cada uma das funções criadas acima, mostrando o resul
 no console.
 */
 console.log( sum(2,3));
-console.log( subtraction(2,3));
-console.log( multiplication(2,3));
-console.log( division(2,3));
-console.log( mod(2,5));
+console.log( subtraction(5,8));
+console.log( multiplication(15,3));
+console.log( division(20,30));
+console.log( mod(12,5));
