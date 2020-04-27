@@ -124,7 +124,7 @@ console.log( division(function(num1,num2){
 
 console.log( 'O resto da divisão é:' );
 console.log( mod(function(num1,num2){
-    return num1+num2;
-}));
+    return num1%num2;
+}) );
 
 })();
